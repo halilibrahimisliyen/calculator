@@ -1,3 +1,4 @@
+package calculator;
 import java.util.Scanner;
 
 public class calculator{
@@ -60,14 +61,13 @@ public class calculator{
         +"7.Finding The Area of a Rectangle\n"
         +"8.Exit\n";
 
-        System.out.println("Please select the operation you want to perform");
-        System.out.println(menu);
-        int select;
-        select=input.nextInt();
+        int select=1; 
         
-        
-
-        switch(select){
+        do {
+            System.out.println(menu);
+            System.out.print("Please select the operation you want to perform: ");
+            select=input.nextInt();
+            switch(select){
             case 1:
             System.out.println("Number 1: ");
             int x=input.nextInt();
@@ -130,10 +130,12 @@ public class calculator{
              System.out.println("Exiting...");
              break;
 
-        }
+             default:
+             System.out.println("You write a false value, please try again");
+             
+    }
 
-        
-
-
+        } while (select!=8);
+            
     }
 }
